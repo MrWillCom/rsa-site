@@ -1,0 +1,16 @@
+{
+    "left": [
+        {
+            "html": "RSA CLI",
+            "url": "/",
+            "class": "bold"
+        }
+    ],
+    "right": [
+        {
+            "html": "<i class=\"bi bi-github\"></i>",
+            "url": "https://github.com/MrWillCom/rsa-cli",
+            "outside": true
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>{{ title }} - {{ site.title }}</title>
+    <link rel="shortcut icon" href="/assets/icon.png">
+    <link rel="stylesheet" href="/styles/main.css">
+    {% for stylesheet in stylesheets %}
+    <link rel="stylesheet" href="{{ stylesheet }}">
+    {% endfor %}
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <ul class="left">
+            {% for item in nav.left %}
+            <li class="nav-item {{ item.class }}">
+                <a href="{{ item.url }}" {% if item.outside %}target="_blank"{% endif %}>{{ item.html | safe }}</a>
+            </li>
+            {% endfor %}
+            </ul>
+            <ul class="right">
+            {% for item in nav.right %}
+            <li class="nav-item {{ item.class }}">
+                <a href="{{ item.url }}" {% if item.outside %}target="_blank"{% endif %}>{{ item.html | safe }}</a>
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        {{ content | safe }}
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="license">Website code licensed <a href="https://github.com/MrWillCom/rsa-site/blob/main/LICENSE">MIT</a>, RSA CLI licensed <a href="https://github.com/MrWillCom/rsa-cli/blob/main/LICENSE">MIT</a>, too.</div>
+        </div>
+    </footer>
+    {% for script in scripts %}
+    <script href="{{ script }}"></script>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,9 @@
+.footer {
+    border-top: var(--footer-border);
+    color: var(--footer-txt-color);
+}
+
+.footer>.container {
+    max-width: calc(var(--container-max-width) - 12px * 2);
+    padding: 12px;
+}
