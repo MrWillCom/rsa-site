@@ -1,7 +1,7 @@
 {
     "left": [
         {
-            "html": "RSA CLI",
+            "html": "<img src=\"/assets/icon.png\" alt=\"Icon\" class=\"icon\"><span class=\"icon-title\"> RSA CLI</span>",
             "url": "/",
             "class": "bold"
         }

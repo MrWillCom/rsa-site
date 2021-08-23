@@ -48,3 +48,12 @@
 .nav .nav-item>a:active {
     color: var(--nav-link-color-active);
 }
+
+.nav .nav-item>a>.icon {
+    height: 18px;
+    transform: scale(1.8) translateX(0px) translateY(1px);
+}
+
+.nav .nav-item>a>.icon-title {
+    margin-left: 10px;
+}
