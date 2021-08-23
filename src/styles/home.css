@@ -1,3 +1,56 @@
+:root {
+    --editor-background-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --editor-background-color: #8881;
+    }
+}
+
+.editor {
+    max-width: calc(100vw - 12px * 2);
+    border-radius: 12px;
+    box-shadow: 0px 10px 24px #00000026;
+    background-color: var(--editor-background-color);
+}
+
+.editor .editor-header {
+    text-align: center;
+    padding: 12px;
+    border-bottom: var(--border-primary);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.editor .editor-main {
+    overflow: auto;
+    text-align: left;
+    padding: 12px;
+    font-family: var(--font-mono);
+}
+
+.editor .editor-main * {
+    user-select: text;
+    white-space: nowrap;
+}
+
+.editor .editor-main::-webkit-scrollbar {
+    display: none;
+}
+
+.editor .editor-main .cmd-green {
+    color: #98c379;
+}
+
+.editor .editor-main .cmd-blue {
+    color: #61afef;
+}
+
+.editor .editor-main .cmd-grey {
+    color: #cccccc;
+}
+
 .main {
     text-align: center;
 }
@@ -6,7 +59,7 @@
     user-select: none;
 }
 
-[sec-num="2"] {
+[sec-num="3"], [sec-num="5"], [sec-num="7"] {
     background-color: #a3a3a30a;
 }
 
@@ -31,4 +84,186 @@
     font-size: 64px;
     margin: 0;
     margin-top: 24px;
+}
+
+[sec-num="2"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 64px 0;
+}
+
+[sec-num="2"] .editor {
+    width: 600px;
+}
+
+[sec-num="2"] .title {
+    font-size: 48px;
+    margin: 0;
+    margin-top: 12px;
+}
+
+[sec-num="2"] .description {
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+[sec-num="3"] .container, [sec-num="4"] .container, [sec-num="5"] .container, [sec-num="6"] .container, [sec-num="7"] .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 36px 12px;
+    max-width: calc(var(--container-max-width) - 12px * 2);
+}
+
+@media (max-width: 700px) {
+    [sec-num="3"] .container, [sec-num="4"] .container, [sec-num="5"] .container, [sec-num="6"] .container, [sec-num="7"] .container {
+        align-items: flex-start;
+    }
+    [sec-num="3"] .container, [sec-num="5"] .container, [sec-num="7"] .container {
+        flex-direction: column;
+    }
+    [sec-num="4"] .container, [sec-num="6"] .container {
+        flex-direction: column-reverse;
+    }
+}
+
+[sec-num="3"] .title, [sec-num="4"] .title, [sec-num="5"] .title, [sec-num="6"] .title, [sec-num="7"] .title {
+    margin: 8px 0;
+    margin-top: 18px;
+}
+
+[sec-num="3"] .description, [sec-num="4"] .description, [sec-num="5"] .description, [sec-num="6"] .description, [sec-num="7"] .description {
+    color: var(--color-text-secondary);
+    margin: 8px 0;
+    margin-bottom: 18px;
+}
+
+[sec-num="3"] .left .description button {
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+[sec-num="3"] .left .description button#use-npm {
+    background-color: #cd0000;
+    color: #fff;
+}
+
+[sec-num="3"] .left .description button#use-npm:hover, [sec-num="3"] .description button#use-npm:focus-visible {
+    background-color: #ef2d2d;
+}
+
+[sec-num="3"] .left .description button#use-npm:active {
+    background-color: #9f0d0d;
+}
+
+[sec-num="3"] .left .description button#use-yarn {
+    background-color: #2c8ebb;
+    color: #fff;
+}
+
+[sec-num="3"] .left .description button#use-yarn:hover, [sec-num="3"] .description button#use-yarn:focus-visible {
+    background-color: #4bb0df;
+}
+
+[sec-num="3"] .left .description button#use-yarn:active {
+    background-color: #24759b;
+}
+
+@media (max-width: 700px) {
+    [sec-num="3"] .right .editor, [sec-num="4"] .left .editor, [sec-num="5"] .right .editor, [sec-num="6"] .left .editor, [sec-num="7"] .right .editor {
+        width: calc(100vw - 12px * 2);
+    }
+}
+
+[sec-num="3"] .right .editor .editor-header {
+    transition-property: background-color, color, border-bottom-color;
+    transition-duration: 0.2s;
+}
+
+[install-method="yarn"] [sec-num="3"] .right .editor .editor-header, [install-method="yarn"] [sec-num="6"] .editor .editor-header {
+    border-bottom: 1px solid #2c8ebb33;
+    background-color: #2c8ebb1a;
+    color: #2c8ebb;
+}
+
+[install-method="npm"] [sec-num="3"] .right .editor .editor-header, [install-method="npm"] [sec-num="6"] .editor .editor-header {
+    border-bottom: 1px solid #cd000033;
+    background-color: #cd00001a;
+    color: #cd0000;
+}
+
+[sec-num="3"] .right .editor .editor-header .yarn, [sec-num="3"] .right .editor .editor-header .npm, [sec-num="6"] .editor .editor-header .yarn, [sec-num="6"] .editor .editor-header .npm {
+    display: none;
+}
+
+[install-method="yarn"] [sec-num="3"] .right .editor .editor-header .yarn, [install-method="yarn"] [sec-num="6"] .editor .editor-header .yarn {
+    display: inline;
+}
+
+[install-method="npm"] [sec-num="3"] .right .editor .editor-header .npm, [install-method="npm"] [sec-num="6"] .editor .editor-header .npm {
+    display: inline;
+}
+
+[sec-num="3"] .right .editor .use-yarn, [sec-num="3"] .right .editor .use-npm, [sec-num="6"] .editor .use-yarn, [sec-num="6"] .editor .use-npm {
+    display: none;
+}
+
+[sec-num="3"] .right .editor .yarn, [sec-num="6"] .editor .yarn {
+    color: #2c8ebb;
+}
+
+[sec-num="3"] .right .editor .npm, [sec-num="6"] .editor .npm {
+    color: #cd0000;
+}
+
+[install-method="yarn"] [sec-num="3"] .right .editor .use-yarn, [install-method="yarn"] [sec-num="6"] .editor .use-yarn {
+    display: block;
+}
+
+[install-method="npm"] [sec-num="3"] .right .editor .use-npm, [install-method="npm"] [sec-num="6"] .editor .use-npm {
+    display: block;
+}
+
+[sec-num="4"] .editor, [sec-num="5"] .editor {
+    width: 420px;
+}
+
+[sec-num="6"] button {
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+[sec-num="6"] button#use-npm {
+    background-color: #cd0000;
+    color: #fff;
+}
+
+[sec-num="6"] button#use-npm:hover, [sec-num="6"] button#use-npm:focus-visible {
+    background-color: #ef2d2d;
+}
+
+[sec-num="6"] button#use-npm:active {
+    background-color: #9f0d0d;
+}
+
+[sec-num="6"] button#use-yarn {
+    background-color: #2c8ebb;
+    color: #fff;
+}
+
+[sec-num="6"] button#use-yarn:hover, [sec-num="6"] button#use-yarn:focus-visible {
+    background-color: #4bb0df;
+}
+
+[sec-num="6"] button#use-yarn:active {
+    background-color: #24759b;
 }

@@ -1,5 +1,5 @@
 module.exports = (eleventyConfig) => {
-    eleventyConfig.addPassthroughCopy("scripts");
+    eleventyConfig.addPassthroughCopy("src/scripts");
 
     eleventyConfig.setTemplateFormats([
         "njk",

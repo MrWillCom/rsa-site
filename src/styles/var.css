@@ -18,6 +18,9 @@
     --color-text-primary: var(--body-txt-color);
     --color-text-secondary: #676e7a;
     --color-text-tertiary: #9fa6b3;
+    --color-border-primary: #8881;
+    --border-primary: 1px solid var(--color-border-primary);
+    --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,5 +38,6 @@
         --color-text-primary: var(--body-txt-color);
         --color-text-secondary: #9ca5b3;
         --color-text-tertiary: #6c737c;
+        --color-border-primary: #8881;
     }
 }

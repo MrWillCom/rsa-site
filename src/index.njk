@@ -7,11 +7,137 @@ scripts:
   - '/scripts/home.js'
 ---
 <div class="main">
-    <div class="section container" sec-num="1">
-        <div>
-            <img src="/assets/icon.png" alt="Icon" class="icon">
-            <h1 class="title">RSA CLI</h1>
-            <h3 class="description">Encrypt Right in your Terminal</h3>
-        </div>
+  <div class="section container" sec-num="1">
+    <div>
+      <img src="/assets/icon.png" alt="Icon" class="icon">
+      <h1 class="title">RSA CLI</h1>
+      <h3 class="description">A command line tool for RSA encryption and decryption.</h3>
     </div>
+  </div>
+  <div class="section" sec-num="2">
+    <div class="editor">
+      <div class="editor-header">Bash</div>
+      <div class="editor-main">
+        <div class="line">$ rsa generate test</div>
+        <div class="line">Generated a new key pair: 'test'</div>
+        <div class="line">&nbsp;</div>
+        <div class="line">$ rsa encrypt test 'Hello, World!'</div>
+        <div class="line">Encrypted 'Hello, World!' with key 'test':</div>
+        <div class="line">siuTym3xP/0u0yQHZ+oNBSFC7ha1JxUzjdrfZ7azpOHsLiQpenyPkoney/LF4hiKrrAKVf6PSIubBgD0s4pluRVoN1m/no8QvB55TV64sreVxLIgbZkUPMWrJFHBMjZbtf3Bnl+Araynq0Dk4OM5vjFwdnzsdzOwEDtAkujBFPjMSGD3k69eW9gaoEjlZCybzKVjqkVzULRp6XbtjmrBLMA5ryKV5Fx92ZIvIRQzmeCcBC1isdMDMxT2qe+TaspUU6Xdlos5oGMkpGRo/iMM6MzoNi1SKihTuod9UpXFbpnHOepW5HJkhECMNBhpoPMglXC/vhvvR3SABnpJMtjk5A==</div>
+        <div class="line">&nbsp;</div>
+        <div class="line">$ rsa decrypt test 'siuTym3xP/0u0yQHZ+oNBSFC7ha1JxUzjdrfZ7azpOHsLiQpenyPkoney/LF4hiKrrAKVf6PSIubBgD0s4pluRVoN1m/no8QvB55TV64sreVxLIgbZkUPMWrJFHBMjZbtf3Bnl+Araynq0Dk4OM5vjFwdnzsdzOwEDtAkujBFPjMSGD3k69eW9gaoEjlZCybzKVjqkVzULRp6XbtjmrBLMA5ryKV5Fx92ZIvIRQzmeCcBC1isdMDMxT2qe+TaspUU6Xdlos5oGMkpGRo/iMM6MzoNi1SKihTuod9UpXFbpnHOepW5HJkhECMNBhpoPMglXC/vhvvR3SABnpJMtjk5A=='</div>
+        <div class="line">Decrypted 'siuTym3xP/0u...BnpJMtjk5A==' with key 'test':</div>
+        <div class="line">Hello, World!</div>
+      </div>
+    </div>
+    <h2 class="title">Simple.</h2>
+    <p class="description">Short commands, plus alias.</p>
+  </div>
+  <div class="section" sec-num="3">
+    <div class="container">
+      <div class="left">
+        <h2 class="title">One-Command Installation</h2>
+        <p class="description">Install/Upgrade with <button id="use-yarn">Yarn</button> or <button id="use-npm">npm</button> with one-command.</p>
+      </div>
+      <div class="right">
+        <div class="editor">
+          <div class="editor-header"><span class="yarn">Yarn</span><span class="npm">npm</span></div>
+          <div class="editor-main">
+            <div class="line use-yarn" id="install-command">$ <span class="yarn">yarn</span> global add rsa-cli</div>
+            <div class="line use-npm" id="install-command">$ <span class="npm">npm</span> install -g rsa-cli</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" sec-num="4">
+    <div class="container">
+      <div class="left">
+        <div class="editor">
+          <div class="editor-header">Bash</div>
+          <div class="editor-main">
+            <div class="line">$ rsa password enable</div>
+            <div class="line"><span class="cmd-green">?</span> New password: <i class="cmd-grey">[hidden]</i></div>
+            <div class="line"><span class="cmd-green">?</span> Confirm password: <i class="cmd-grey">[hidden]</i></div>
+            <div class="line">------------------------</div>
+            <div class="line">IMPORTANT!</div>
+            <div class="line">Remember your password!</div>
+            <div class="line">Because if you forgot it, NO ONE CAN RECOVER YOUR PRIVATE KEYS!</div>
+            <div class="line">------------------------</div>
+            <div class="line"><span class="cmd-green">?</span> Are you sure you want to enable password? <span class="cmd-blue">Yes</span></div>
+            <div class="line">Password enabled.</div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <h2 class="title">Private Keys Protection</h2>
+        <p class="description">Protect your private key with password.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section" sec-num="5">
+    <div class="container">
+      <div class="left">
+        <h2 class="title">Open Source</h2>
+        <p class="description">RSA CLI is fully open source, so you can trust it.</p>
+      </div>
+      <div class="right">
+        <div class="editor">
+          <div class="editor-header">Bash</div>
+          <div class="editor-main">
+            <div class="line">$ git clone git@github.com:MrWillCom/rsa-cli.git</div>
+            <div class="line">Cloning into 'rsa-cli'...</div>
+            <div class="line">remote: Enumerating objects: 440, done.</div>
+            <div class="line">remote: Counting objects: 100% (440/440), done.</div>
+            <div class="line">remote: Compressing objects: 100% (305/305), done.</div>
+            <div class="line">Receiving objects: 100% (440/440), 365.70 KiB | 175.00 KiB/s, done.</div>
+            <div class="line">Resolving deltas: 100% (254/254), done.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" sec-num="6">
+    <div class="container">
+      <div class="left">
+        <div class="editor">
+          <div class="editor-header"><span class="yarn">Yarn</span><span class="npm">npm</span></div>
+          <div class="editor-main">
+            <div class="line use-yarn" id="install-command">$ <span class="yarn">yarn</span> global add rsa-cli</div>
+            <div class="line use-npm" id="install-command">$ <span class="npm">npm</span> install -g rsa-cli</div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <h2 class="title">Get Started</h2>
+        <p class="description">Install with <button id="use-yarn">Yarn</button> or <button id="use-npm">npm</button>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section" sec-num="7">
+    <div class="container">
+      <div class="left">
+        <h2 class="title">Don't have Yarn or npm?<br>Checkout the executables.</h2>
+      </div>
+      <div class="right">
+        <div class="editor">
+          <div class="editor-header">Bash</div>
+          <div class="editor-main">
+            <div class="line">$ cd dist</div>
+            <div class="line">$ ls</div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-alpine-arm64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-alpine-x64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-linux-arm64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-linux-x64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-linuxstatic-arm64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-linuxstatic-x64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-macos-arm64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-macos-x64</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-win-arm64.exe</a></div>
+            <div class="line"><a href="https://github.com/MrWillCom/rsa-cli/releases">rsa-cli-win-x64.exe</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
