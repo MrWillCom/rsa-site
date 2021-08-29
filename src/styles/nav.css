@@ -6,6 +6,7 @@
     z-index: 1000;
     background-color: var(--nav-bg-color);
     backdrop-filter: var(--filter-blur);
+    -webkit-backdrop-filter: var(--filter-blur);
     border-bottom: var(--nav-border);
 }
 
