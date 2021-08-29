@@ -8,8 +8,7 @@ scripts:
 {% macro sidebar(list) %}
 <ul>
 {% for item in list %}
-  {% set sidebarItemOrder = sidebarItemOrder + 1 %}
-  <li style="--order: {{ sidebarItemOrder }}">
+  <li>
     {% set href = "/docs/" + item.url %}
     <a href="{{ href }}" class="{% if href == page.url %}active{% endif %}">{{ item.title }}</a>
     {% if item.children %}
@@ -20,7 +19,6 @@ scripts:
 </ul>
 {% endmacro %}
 
-{% set sidebarItemOrder = 0 %}
 <div class="container">
 <button id="toggle-sidebar"><i class="bi bi-list"></i></button>
 <aside class="sidebar" id="sidebar">
