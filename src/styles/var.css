@@ -38,6 +38,9 @@
         --body-bg-color: #141516;
         --link-color: #5fafff;
 
+        --color-accent: #5fafff;
+        --color-accent-hover: #5fafff10;
+        --color-accent-active: #5fafff40;
         --color-text-primary: var(--body-txt-color);
         --color-text-secondary: #9ca5b3;
         --color-text-tertiary: #6c737c;
