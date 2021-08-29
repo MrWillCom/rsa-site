@@ -1,0 +1,32 @@
+---
+title: Internationalization
+---
+
+RSA CLI supports i18n ([#5](https://github.com/MrWillCom/rsa-cli/issues/5)), so you can choose your most familiar language. The default language is `en-US`.
+
+## Change language
+
+```sh
+rsa config set lang [language-code]
+```
+
+Check the following table to get `[language-code]`.
+
+## Supported languages
+
+| Language                            | Code    | Description         |
+| ----------------------------------- | ------- | ------------------- |
+| English                             | `en`    | Referred to `en-US` |
+| English (United States)             | `en-US` | Default             |
+| Chinese - 中文                      | `zh`    | Referred to `zh-CN` |
+| Chinese (Simplified) - 中文（简体） | `zh-CN` |                     |
+
+## Translating
+
+Translations are in [/src/i18n/](https://github.com/MrWillCom/rsa-cli/tree/main/src/i18n) directory, to improve or translate RSA CLI to your language, just create `[language-code].js` to get started. Plus, you can refer to [/src/i18n/en-US.js](https://github.com/MrWillCom/rsa-cli/tree/main/src/i18n/en-US.js) to get the full string list.
+
+`%x` will be replaced with the data generated when executing, don't translate or remove it.
+
+If your translate is not completed, the missing strings will be replaced with the default string.
+
+Welcome to translate ✌️!

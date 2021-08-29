@@ -1,0 +1,60 @@
+[
+    {
+        "title": "Installation",
+        "url": "installation/"
+    },
+    {
+        "title": "Commands",
+        "url": "commands/",
+        "children": [
+            {
+                "title": "Help",
+                "url": "commands/help/"
+            },
+            {
+                "title": "Version",
+                "url": "commands/version/"
+            },
+            {
+                "title": "Config",
+                "url": "commands/config/"
+            },
+            {
+                "title": "Generate",
+                "url": "commands/generate/"
+            },
+            {
+                "title": "Import",
+                "url": "commands/import/"
+            },
+            {
+                "title": "Encrypt",
+                "url": "commands/encrypt/"
+            },
+            {
+                "title": "Decrypt",
+                "url": "commands/decrypt/"
+            },
+            {
+                "title": "Get",
+                "url": "commands/get/"
+            },
+            {
+                "title": "List",
+                "url": "commands/list/"
+            },
+            {
+                "title": "Remove",
+                "url": "commands/remove/"
+            },
+            {
+                "title": "Password",
+                "url": "commands/password/"
+            }
+        ]
+    },
+    {
+        "title": "Internationalization",
+        "url": "internationalization/"
+    }
+]

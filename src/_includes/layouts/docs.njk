@@ -1,0 +1,33 @@
+---
+layout: 'layouts/base.njk'
+stylesheets:
+  - '/styles/docs.css'
+scripts:
+  - '/scripts/docs.js'
+---
+{% macro sidebar(list) %}
+<ul>
+{% for item in list %}
+  {% set sidebarItemOrder = sidebarItemOrder + 1 %}
+  <li style="--order: {{ sidebarItemOrder }}">
+    {% set href = "/docs/" + item.url %}
+    <a href="{{ href }}" class="{% if href == page.url %}active{% endif %}">{{ item.title }}</a>
+    {% if item.children %}
+      {{ sidebar(item.children) }}
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endmacro %}
+
+{% set sidebarItemOrder = 0 %}
+<div class="container">
+<button id="toggle-sidebar"><i class="bi bi-list"></i></button>
+<aside class="sidebar" id="sidebar">
+{{ sidebar(toc) }}
+</aside>
+<main>
+  <h1 class="title">{{ title | safe }}</h1>
+  {{ content | safe }}
+</main>
+</div>

@@ -3,6 +3,7 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.setTemplateFormats([
         "njk",
+        "md",
         "css",
         "png",
     ]);

@@ -1,0 +1,112 @@
+.content {
+    --container-max-width: 1000px;
+}
+
+.content>.container {
+    max-width: calc(var(--container-max-width) - 12px * 2);
+    padding: 12px;
+    display: flex;
+}
+
+.content>.container>main>.title {
+    font-size: 48px;
+    margin: 84px 0;
+}
+
+.content>.container>.sidebar {
+    min-width: 240px;
+    padding: 84px 0;
+}
+
+#toggle-sidebar {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    #toggle-sidebar {
+        display: block;
+        position: fixed;
+        top: 48px;
+        left: 0;
+        right: 0;
+        padding: 8px 0px;
+        width: 100vw;
+        outline: none;
+        border: none;
+        border-bottom: var(--nav-border);
+        background-color: var(--nav-bg-color);
+        color: var(--color-text-secondary);
+        backdrop-filter: var(--filter-blur);
+        font-size: 24px;
+        line-height: 24px;
+        z-index: 1000;
+    }
+    .content>.container>.sidebar {
+        position: fixed;
+        top: calc(48px + 42px);
+        left: 0;
+        right: 0;
+        width: calc(100vw - 24px * 2);
+        height: 0;
+        padding: 0 24px;
+        overflow: hidden;
+        background-color: var(--nav-bg-color);
+        backdrop-filter: var(--filter-blur);
+        transition-property: height, padding;
+        transition-duration: 0.35s;
+        transition-timing-function: cubic-bezier(0.19, 0.45, 0.25, 1);
+    }
+    .content>.container>.sidebar.show {
+        height: calc(100vh - 48px - 42px - 24px * 2);
+        padding: 24px;
+        right: 0vw;
+    }
+    .content>.container>.sidebar li {
+        opacity: 0;
+        transform: translateY(24px);
+        transition-property: opacity, transform;
+        transition-duration: 0.5s;
+        transition-delay: 0s;
+    }
+    .content>.container>.sidebar.show li {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--order) * 0.05s + 0.2s);
+    }
+}
+
+.content>.container>.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 16px;
+}
+
+.content>.container>.sidebar>ul {
+    padding: 0;
+}
+
+.content>.container>.sidebar li>a {
+    display: inline-block;
+    margin: 2px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.content>.container>.sidebar li>a.active {
+    color: var(--color-accent);
+    background-color: var(--color-accent-hover);
+}
+
+.content>.container>.sidebar li>a:hover, .content>.container>.sidebar li>a:focus-visible {
+    color: var(--color-accent);
+    background-color: var(--color-accent-hover);
+}
+
+.content>.container>.sidebar li>a:active {
+    color: var(--color-accent);
+    background-color: var(--color-accent-active);
+}
