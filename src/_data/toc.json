@@ -58,6 +58,10 @@
         "url": "i18n/"
     },
     {
+        "title": "GUI",
+        "url": "gui/"
+    },
+    {
         "title": "API",
         "url": "api/"
     }
