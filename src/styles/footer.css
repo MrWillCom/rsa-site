@@ -7,3 +7,19 @@
     max-width: calc(var(--container-max-width) - 12px * 2);
     padding: 12px;
 }
+
+.footer>.container>.icon>img {
+    width: 36px;
+    height: 36px;
+    margin: -3px;
+    margin-bottom: 4px;
+}
+
+.footer>.container>.license {
+    margin-bottom: 6px;
+}
+
+.footer>.container>.built-with, .footer>.container>.powered-by {
+    margin: 4px 0;
+    font-size: 15px;
+}
