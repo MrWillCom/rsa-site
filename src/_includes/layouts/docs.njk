@@ -2,7 +2,9 @@
 layout: 'layouts/base.njk'
 stylesheets:
   - '/styles/docs.css'
+  - '/styles/code.css'
 scripts:
+  - 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js'
   - '/scripts/docs.js'
 ---
 {% macro sidebar(list) %}
@@ -29,3 +31,5 @@ scripts:
   {{ content | safe }}
 </main>
 </div>
+
+<script>window.addEventListener('load', () => { hljs.highlightAll() })</script>
